@@ -47,82 +47,88 @@
 
 ---------------------------------------------------------------
 
-
 # NLP Multi-Class Text Classification with Naive Bayes
 
-## Project Motive
+## Overview
 
-The purpose of this project is to build a multi-class text classification model using the Naive Bayes algorithm. The goal is to develop a model that can automatically categorize customer complaints into predefined classes, making it easier for companies to handle and analyze large volumes of customer feedback.
+Welcome to the NLP Multi-Class Text Classification project! This repository showcases how to build an efficient text classification model using the Naive Bayes algorithm. The model is designed to categorize customer complaints into predefined classes, streamlining the process of handling and analyzing customer feedback.
 
-Text classification is a common task in Natural Language Processing (NLP) that involves assigning predefined labels to text based on its content. In this project, we focus on classifying customer complaints into categories such as "Billing", "Service", "Technical Issue", etc.
+## Project Motivation
 
-By leveraging the Naive Bayes algorithm, this project aims to provide a simple yet effective solution for text classification. The Naive Bayes algorithm is known for its efficiency and effectiveness, particularly with text data, making it a suitable choice for this task.
+In the world of customer service, handling large volumes of customer complaints efficiently is crucial. This project aims to automate the categorization of these complaints into specific classes, such as "Billing", "Service", and "Technical Issue", allowing companies to quickly address and analyze customer issues.
+
+By employing the Naive Bayes algorithm, known for its simplicity and effectiveness in text classification tasks, we provide a robust solution to manage and understand customer feedback at scale.
 
 ## Naive Bayes Algorithm
 
-The Naive Bayes algorithm is a probabilistic machine learning model based on Bayes' theorem, which is used for classification tasks. It assumes that the presence of a feature (in this case, a word or term) in a document is independent of the presence of any other feature. This assumption of independence is why the algorithm is termed "naive."
+Naive Bayes is a probabilistic classification technique based on Bayes' Theorem with an assumption of independence among features. Here’s why it's effective:
 
-### Key Concepts
-
-- **Bayes' Theorem**: This theorem calculates the probability of a class given the features (words) in a document. The formula is:
+- **Bayes' Theorem**: Calculates the probability of a class given the presence of features in the data. The theorem is expressed as:
   \[
   P(C|X) = \frac{P(X|C) \cdot P(C)}{P(X)}
   \]
   Where:
-  - \(P(C|X)\) is the probability of class \(C\) given the features \(X\).
-  - \(P(X|C)\) is the probability of features \(X\) given class \(C\).
+  - \(P(C|X)\) is the posterior probability of class \(C\) given features \(X\).
+  - \(P(X|C)\) is the likelihood of features \(X\) given class \(C\).
   - \(P(C)\) is the prior probability of class \(C\).
-  - \(P(X)\) is the probability of features \(X\).
+  - \(P(X)\) is the evidence or the probability of features \(X\).
 
-- **Feature Independence**: Naive Bayes assumes that all features are independent given the class. This simplifies the computation of the probability of a class by multiplying the probabilities of individual features.
+- **Feature Independence**: Assumes that features are independent given the class, simplifying calculations and making the algorithm efficient.
 
 - **Types of Naive Bayes Classifiers**:
-  - **Multinomial Naive Bayes**: Suitable for discrete features (e.g., word counts in text).
-  - **Bernoulli Naive Bayes**: Suitable for binary/boolean features (e.g., presence or absence of words).
-  - **Gaussian Naive Bayes**: Suitable for continuous features.
+  - **Multinomial Naive Bayes**: Best suited for text classification where features are word counts.
+  - **Bernoulli Naive Bayes**: Suitable for binary/boolean features.
+  - **Gaussian Naive Bayes**: Ideal for continuous features.
 
-### Why Naive Bayes?
-
-- **Efficiency**: Naive Bayes models are computationally efficient and require less training time compared to more complex models.
-- **Scalability**: The algorithm can handle large datasets effectively.
-- **Performance**: Despite the naive assumption of feature independence, Naive Bayes often performs well in practice, especially for text classification tasks.
-
-In this project, we use the Multinomial Naive Bayes classifier, which is particularly well-suited for text data where the features are word counts or frequencies.
+Despite its simplicity, Naive Bayes often yields excellent results, especially for large text datasets.
 
 ## Project Structure
 
+Here’s a breakdown of the project files and their purpose:
+
 ### Modular_code/
-- **Input/**: Contains input dataset.
-  - `complaints.csv`: Customer complaints data.
-  
-- **Output/**: Stores generated models.
-  - `count_vect.pkl`: CountVectorizer model saved after training.
-  - `nb.pkl`: Naive Bayes model saved after training.
-  
-- **Source/**: Contains scripts for core functionality.
-  - `model.py`: Script for training the model.
-  - `processing.py`: Data preprocessing functions.
-  - `utils.py`: Helper and utility functions.
-  
+- **Input/**: Contains input data.
+  - `complaints.csv`: Dataset with customer complaints.
+
+- **Output/**: Stores trained models and vectorizers.
+  - `count_vect.pkl`: Serialized CountVectorizer object.
+  - `nb.pkl`: Serialized Naive Bayes model.
+
+- **Source/**: Core scripts for functionality.
+  - `model.py`: Script for training the Naive Bayes model.
+  - `processing.py`: Functions for data preprocessing.
+  - `utils.py`: Utility functions for saving and loading models.
+
 ### Additional Files
-- **config.py**: Configuration settings for paths, etc.
-- **Engine.py**: Main script to execute the project workflow.
-- **naive_bayes.ipynb**: Jupyter notebook for testing and development.
-- **predict.py**: Script for making predictions.
-- **README.md**: Documentation and project overview.
-- **requirements.txt**: Dependencies for Python libraries.
-  
+- **config.py**: Configuration file for paths and settings.
+- **Engine.py**: Main script to execute the end-to-end workflow.
+- **naive_bayes.ipynb**: Jupyter notebook for exploratory analysis and testing.
+- **predict.py**: Script for making predictions on new complaints.
+- **README.md**: Documentation file for the project.
+- **requirements.txt**: File listing project dependencies.
+
 ### Data Files
-- **nltk_data/**: Data files from NLTK for text processing.
+- **nltk_data/**: Contains data files for NLTK, used for text processing.
 
 ## Getting Started
 
-1. **Setup**: Ensure all dependencies are installed by running `pip install -r requirements.txt`.
-2. **Run the Workflow**: Execute `python Engine.py` to train the model.
-3. **Make Predictions**: Use `python predict.py --test_complaint "your complaint text here"` to get predictions.
+To get started with this project, follow these steps:
 
-## License
+1. **Install Dependencies**: Run `pip install -r requirements.txt` to install all necessary libraries.
+2. **Prepare Data**: Ensure that your `complaints.csv` file is in the `Input/` directory.
+3. **Train the Model**: Execute the training script with `python Engine.py`. This will process the data, train the Naive Bayes model, and save the results.
+4. **Make Predictions**: Use `python predict.py --test_complaint "your complaint text here"` to classify new complaints.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Contributing
 
+Contributions to this project are welcome! If you have suggestions for improvements or find issues, please submit a pull request or open an issue on the GitHub repository.
+
+
+## Contact
+
+For any questions or feedback, please contact [https://www.linkedin.com/in/pradip-wasre/].
+
+---
+
+Thank you for checking out the NLP Multi-Class Text Classification project. We hope you find it useful and informative!
 
