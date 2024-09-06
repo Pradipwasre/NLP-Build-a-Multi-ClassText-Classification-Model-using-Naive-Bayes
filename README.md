@@ -58,7 +58,11 @@ Predictions: Make predictions on new, unseen complaint reviews.
 ----------------------------------------------------------------------
 
 
-### Naive Bayes Formula
-
-![Bayes Theorem](path_to_image/bayes_theorem.png)
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+\[
+P(C|X) = \frac{P(X|C) \cdot P(C)}{P(X)}
+\]
+\end{document}
 
