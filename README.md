@@ -62,12 +62,13 @@ Predictions: Make predictions on new, unseen complaint reviews.
 
 The Naive Bayes algorithm is based on **Bayes' Theorem**:
 
-P(C|X) = [P(X|C) * P(C)] / P(X)
+**P(C|X) = [P(X|C) * P(C)] / P(X)**
 
 Where:
 
-- P(C|X): Posterior probability of class C given the feature X (how likely the document belongs to class C)
-- P(X|C): Likelihood of feature X given class C
-- P(C): Prior probability of class C
-- P(X): Probability of the feature X (constant for all classes, can be ignored for classification)
+- **P(C|X)**: Posterior probability of class C given the feature X.
+- **P(X|C)**: Likelihood of feature X given class C.
+- **P(C)**: Prior probability of class C.
+- **P(X)**: Probability of the feature X (can be ignored for classification since it's constant).
+sses, can be ignored for classification)
 
