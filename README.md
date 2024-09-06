@@ -58,11 +58,92 @@ Predictions: Make predictions on new, unseen complaint reviews.
 ----------------------------------------------------------------------
 
 
-\documentclass{article}
-\usepackage{amsmath}
-\begin{document}
-\[
-P(C|X) = \frac{P(X|C) \cdot P(C)}{P(X)}
-\]
-\end{document}
+=== ====
 
+# Multi-Class Text Classification with Naive Bayes
+
+## Project Overview
+
+This project implements the **Naive Bayes Algorithm** to build a multi-class text classification model. The goal is to classify customer complaints into different product categories using **Natural Language Processing (NLP)** techniques in Python.
+
+## Example Calculation: Naive Bayes
+
+### Problem Statement
+
+We want to classify the sentence: **"This application is good."** into **"Positive"** or **"Negative"**.
+
+### Training Data
+
+| Sentence                         | Label    |
+|----------------------------------|----------|
+| "I love this app"                | Positive |
+| "This app is great"              | Positive |
+| "I hate the application"         | Negative |
+| "The app is terrible"            | Negative |
+
+### Prior Probabilities
+
+- Total number of sentences = 4
+- Number of Positive sentences = 2
+- Number of Negative sentences = 2
+
+\[
+P(\text{Positive}) = \frac{2}{4} = 0.5
+\]
+\[
+P(\text{Negative}) = \frac{2}{4} = 0.5
+\]
+
+### Likelihoods for Each Word
+
+For the sentence **"This application is good."**, we calculate the likelihoods for each word given each class.
+
+**Positive Class:**
+
+- Vocabulary size (total unique words) = 7
+
+\[
+P(\text{"this"}|\text{Positive}) = \frac{1}{7}
+\]
+\[
+P(\text{"application"}|\text{Positive}) = \frac{0 + 1}{7 + 4} = \frac{1}{11} \text{ (Laplace smoothing)}
+\]
+\[
+P(\text{"is"}|\text{Positive}) = \frac{1}{7}
+\]
+\[
+P(\text{"good"}|\text{Positive}) = \frac{0 + 1}{7 + 4} = \frac{1}{11} \text{ (Laplace smoothing)}
+\]
+
+**Negative Class:**
+
+- Vocabulary size (total unique words) = 6
+
+\[
+P(\text{"this"}|\text{Negative}) = \frac{0 + 1}{6 + 4} = \frac{1}{10} \text{ (Laplace smoothing)}
+\]
+\[
+P(\text{"application"}|\text{Negative}) = \frac{1}{6}
+\]
+\[
+P(\text{"is"}|\text{Negative}) = \frac{1}{6}
+\]
+\[
+P(\text{"good"}|\text{Negative}) = \frac{0 + 1}{6 + 4} = \frac{1}{10} \text{ (Laplace smoothing)}
+\]
+
+### Posterior Probability Calculation
+
+**For Positive:**
+
+\[
+P(\text{Positive}|\text{"This application is good"}) \propto P(\text{"this"}|\text{Positive}) \times P(\text{"application"}|\text{Positive}) \times P(\text{"is"}|\text{Positive}) \times P(\text{"good"}|\text{Positive}) \times P(\text{Positive})
+\]
+\[
+= \frac{1}{7} \times \frac{1}{11} \times \frac{1}{7} \times \frac{1}{11} \times 0.5
+\]
+
+**For Negative:**
+
+\[
+P(\text{Negative}|\text{"This application is good"}) \propto P(\text{"this"}|\text{Negative}) \times P(\text{"applica
