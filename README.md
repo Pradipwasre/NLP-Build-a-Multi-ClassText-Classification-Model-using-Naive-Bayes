@@ -38,8 +38,22 @@ Predictions: Using the trained model to predict product categories for new compl
 Language: `Python`
 Libraries:
 `pandas`, `seaborn`, `matplotlib` for data analysis and `visualization`.
+
 `nltk` for NLP tasks like tokenization and stopword removal.
 `sklearn` for `Naive Bayes` model implementation.
+
+----------------------------------------------------------------------
+
+## Approach
+
+Data Visualization: Explore and visualize the dataset to understand patterns.
+Data Preprocessing:
+Convert text to lowercase.
+Tokenize the complaint texts.
+Remove stopwords and punctuation.
+Model Building: Train a Naive Bayes classifier for multi-class classification.
+Model Evaluation: Evaluate the model's accuracy and performance on test data.
+Predictions: Make predictions on new, unseen complaint reviews.
 
 ----------------------------------------------------------------------
 
