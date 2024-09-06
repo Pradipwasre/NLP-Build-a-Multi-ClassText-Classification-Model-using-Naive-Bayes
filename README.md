@@ -60,15 +60,5 @@ Predictions: Make predictions on new, unseen complaint reviews.
 
 ### Naive Bayes Formula
 
-The Naive Bayes algorithm is based on **Bayes' Theorem**:
-
-**P(C|X) = [P(X|C) * P(C)] / P(X)**
-
-Where:
-
-- **P(C|X)**: Posterior probability of class C given the feature X.
-- **P(X|C)**: Likelihood of feature X given class C.
-- **P(C)**: Prior probability of class C.
-- **P(X)**: Probability of the feature X (can be ignored for classification since it's constant).
-sses, can be ignored for classification)
+![Bayes Theorem](path_to_image/bayes_theorem.png)
 
