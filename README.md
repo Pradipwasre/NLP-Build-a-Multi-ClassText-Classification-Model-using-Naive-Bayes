@@ -19,3 +19,29 @@ Naive Bayes is a probabilistic classification algorithm that applies Bayes' Theo
 3. Word Frequency: Counting the occurrence of each word in the text for each class.
 4. Class Probability Calculation: Using Bayes' Theorem to calculate the probability of a document belonging to a specific class based on word frequencies.
 5. Prediction: The class with the highest probability is assigned to the document.
+
+----------------------------------------------------------------------
+
+## Project Features
+
+Data Exploration: Visualizing customer complaint data to identify patterns.
+Text Preprocessing: Applying techniques such as lowercasing, tokenization, stopword removal, and punctuation removal.
+Model Building: Training a Naive Bayes classifier using the Scikit-learn library.
+Model Evaluation: Measuring the model's accuracy on test data.
+Predictions: Using the trained model to predict product categories for new complaints.
+
+----------------------------------------------------------------------
+
+## Tech Stack
+
+
+Language: `Python`
+Libraries:
+`pandas`, `seaborn`, `matplotlib` for data analysis and `visualization`.
+`nltk` for NLP tasks like tokenization and stopword removal.
+`sklearn` for `Naive Bayes` model implementation.
+
+----------------------------------------------------------------------
+
+
+
