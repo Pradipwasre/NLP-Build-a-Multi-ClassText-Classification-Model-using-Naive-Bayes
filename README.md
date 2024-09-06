@@ -146,4 +146,26 @@ P(\text{Positive}|\text{"This application is good"}) \propto P(\text{"this"}|\te
 **For Negative:**
 
 \[
-P(\text{Negative}|\text{"This application is good"}) \propto P(\text{"this"}|\text{Negative}) \times P(\text{"applica
+P(\text{Negative}|\text{"This application is good"}) \propto P(\text{"this"}|\text{Negative}) \times P(\text{"application"}|\text{Negative}) \times P(\text{"is"}|\text{Negative}) \times P(\text{"good"}|\text{Negative}) \times P(\text{Negative})
+\]
+\[
+= \frac{1}{10} \times \frac{1}{6} \times \frac{1}{6} \times \frac{1}{10} \times 0.5
+\]
+
+### Comparison of Probabilities
+
+Calculate the actual values:
+
+**For Positive:**
+
+\[
+\frac{1}{7} \times \frac{1}{11} \times \frac{1}{7} \times \frac{1}{11} \times 0.5 \approx 0.00028
+\]
+
+**For Negative:**
+
+\[
+\frac{1}{10} \times \frac{1}{6} \times \frac{1}{6} \times \frac{1}{10} \times 0.5 \approx 0.00028
+\]
+
+Since both probabilities are very close, the sentence **"This application is good"** could be classified as **either Positive or Negative**. The exact classification might depend on additional factors or refinements in the model.
